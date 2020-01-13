@@ -1,4 +1,3 @@
-
 import { NativeModules as RNNativeModules } from "react-native";
 RNNativeModules.UIManager = RNNativeModules.UIManager || {};
 RNNativeModules.UIManager.RCTView = RNNativeModules.UIManager.RCTView || {};
@@ -13,3 +12,5 @@ RNNativeModules.RNGestureHandlerModule = RNNativeModules.RNGestureHandlerModule 
 RNNativeModules.PlatformConstants = RNNativeModules.PlatformConstants || {
   forceTouchAvailable: false
 };
+
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
