@@ -1,3 +1,4 @@
+import React from 'react';
 import { NativeModules as RNNativeModules } from "react-native";
 RNNativeModules.UIManager = RNNativeModules.UIManager || {};
 RNNativeModules.UIManager.RCTView = RNNativeModules.UIManager.RCTView || {};
@@ -14,3 +15,15 @@ RNNativeModules.PlatformConstants = RNNativeModules.PlatformConstants || {
 };
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
+// jest.mock('react-navigation', () => ({
+//   NavigationEvents: 'mockNavigationEvents',
+//   withNavigation: Component => props => (
+//     <Component navigation={{ navigate: jest.fn() }} {...props} />
+//   )
+// }));
+
+jest.mock('react-navigation', () =>({
+  NavigationEvents: 'mockNavigationEvents',
+  withNavigation: component => component
+}));
